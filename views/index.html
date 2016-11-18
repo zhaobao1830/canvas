@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id="canvas" width="1024" height="550" style="border: 1px solid #dddddd;display:block;margin: 50px auto"></canvas>
+    <script type="text/javascript">
+        window.onload=function () {
+            var canvas=document.getElementById("canvas")
+            //设置canvas的宽高，除了可以再canvas里面直接定义宽高，也可以用下面的方法
+            canvas.width=1024;
+            canvas.height=550;
+
+            //判断当前浏览器是否支持canvas，如果支持，就创建绘图框，如果不支持，就提示
+            if(canvas.getContext("2d")){
+                var context=canvas.getContext("2d")
+                //绘制一条直线
+                //context是状态绘图，先进行状态设置，然后绘制
+//                context.moveTo(100,100)
+//                context.lineTo(300,300)
+//                context.lineTo(100,300)
+//                context.lineTo(100,100)
+//                context.lineWidth=5 //线条的宽度
+//                context.strokeStyle="#dddddd"  //线条的颜色，可以用css的各种颜色属性
+//                context.stroke()
+
+                //绘制一个个多边形
+                //context是状态绘图，先进行状态设置，然后绘制
+                //要想这俩个绘制的图形，各用各的属性，就使用context.beginPath()和context.closePath()
+                context.beginPath()  //开始一条路径，或重置当前路径
+                context.moveTo(100,100)
+                context.lineTo(300,300)
+                context.lineTo(100,300)
+                context.lineTo(100,100)
+                context.closePath() //closePath() 方法创建从当前点到开始点的路径。
+                //填充色
+                context.fillStyle="rgb(2,100,30)"
+                context.fill() //这种绘制的是填充的图画
+                //给多边形添加外边框
+                context.lineWidth=5 //线条的宽度
+                context.strokeStyle="red"  //线条的颜色，可以用css的各种颜色属性
+                context.stroke()  //绘制的是线条
+
+                //在绘制一条线
+                context.beginPath()
+                context.moveTo(200,100)
+                context.lineTo(400,300)
+                context.strokeStyle="black"
+                context.stroke()
+            }else{
+                alert("您当前的浏览器不支持canvas,请更换浏览器后再试")
+            }
+        }
+    </script>
+</body>
+</html>
