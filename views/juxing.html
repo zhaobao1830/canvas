@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>矩形</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <!--<script type="text/javascript">-->
+        <!--用rect创建矩形-->
+        <!--var convas=document.getElementById("canvas")-->
+        <!--canvas.width=800;-->
+        <!--convas.height=600;-->
+        <!--var cxt=canvas.getContext("2d");-->
+        <!--cxt.beginPath();-->
+        <!--cxt.rect(100,100,300,300);-->
+        <!--cxt.lineWidth=5;-->
+        <!--cxt.fillStyle="green";-->
+        <!--cxt.strokeStyle="blue";-->
+        <!--cxt.fill();-->
+        <!--cxt.stroke();-->
+    <!--</script>-->
+        <script type="text/javascript">
+            var convas=document.getElementById("canvas");
+            convas.width=800;
+            convas.height=600;
+            var cxt=canvas.getContext("2d");
+            cxt.fillStyle="green";
+            cxt.strokeStyle="blue";
+            cxt.fillRect(100,100,400,400)
+        </script>
+</body>
+</html>

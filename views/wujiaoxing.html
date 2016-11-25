@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五角星</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        window.onload=function () {
+            var canvas=document.getElementById("canvas");
+            canvas.width=800;
+            canvas.height=800;
+            var cxt=canvas.getContext("2d");
+            cxt.lineWidth=10;
+            drawStar(cxt,150,300,400,400,10)
+        }
+        function drawStar(cxt,r,R,x,y,rot) {
+            //使用cxt绘制
+            cxt.beginPath();
+            for(var i=0;i<5;i++){
+//                300是半径，400是偏移
+                cxt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,
+                        -Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+                cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,
+                        -Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+            }
+            cxt.closePath();
+            cxt.stroke();
+        }
+    </script>
+</body>
+</html>

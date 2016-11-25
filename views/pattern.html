@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pattern</title>
+</head>
+<body>
+     <canvas id="canvas"></canvas>
+     <script>
+         window.onload=function () {
+             var canvas=document.getElementById("canvas")
+             canvas.width=800;
+             canvas.height=800;
+             var cxt=canvas.getContext("2d");
+             var backgroundImage=new Image();
+             backgroundImage.src="../img/8.jpg";
+             backgroundImage.onload=function () {
+                 var pattern=cxt.createPattern(backgroundImage,"repeat");
+                 cxt.fillStyle=pattern;
+                 cxt.fillRect(0,0,800,800)
+             }
+         }
+     </script>
+</body>
+</html>

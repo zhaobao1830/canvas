@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>径向渐变</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        window.onload=function () {
+            var canvas=document.getElementById("canvas")
+            canvas.width=800;
+            canvas.height=800;
+            var cxt=canvas.getContext("2d");
+            var radialGrad=cxt.createRadialGradient(400,400,0,400,400,500);
+            radialGrad.addColorStop(0.0,"white");
+            radialGrad.addColorStop(0.25,"yellow");
+            radialGrad.addColorStop(0.5,"green");
+            radialGrad.addColorStop(0.75,"blue");
+            radialGrad.addColorStop(1.0,"black");
+            cxt.fillStyle=radialGrad;
+            cxt.fillRect(0,0,800,800);
+        }
+    </script>
+</body>
+</html>
